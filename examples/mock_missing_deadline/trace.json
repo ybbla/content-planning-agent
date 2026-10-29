@@ -1,0 +1,21 @@
+{
+  "task_id": "missing-deadline-001",
+  "run_id": "run-bca0a379192a45d4b1ad84bb0cd43522",
+  "model": {
+    "mode": "mock",
+    "name": "deterministic-mock-v1"
+  },
+  "model_exchanges": [],
+  "source_model": null,
+  "duplicate": false,
+  "steps": [],
+  "final_status": "unfinished",
+  "reason": {
+    "code": "missing_deadline",
+    "message": "缺少截止时间 deadline_hours",
+    "details": {}
+  },
+  "diagnostics": [],
+  "total_cost": null,
+  "total_hours": null
+}

@@ -1,0 +1,37 @@
+{
+  "task_id": "missing-budget-001",
+  "run_id": "run-0f7a09d4ecf040a088d5474977755c27",
+  "status": "unfinished",
+  "reason": {
+    "code": "missing_budget",
+    "message": "缺少预算 budget",
+    "details": {}
+  },
+  "duplicate": false,
+  "model": {
+    "mode": "mock",
+    "name": "deterministic-mock-v1"
+  },
+  "source_model": null,
+  "task_plan": {
+    "goal": "为主题“夏季新品发布”完成内容活动方案",
+    "constraints": {
+      "budget": null,
+      "deadline_hours": 8,
+      "quality_preference": "high"
+    },
+    "steps": []
+  },
+  "tool_results": {
+    "candidates": [],
+    "scripts": []
+  },
+  "estimates": [],
+  "saved_plan": null,
+  "total_cost": null,
+  "total_hours": null,
+  "deficit": null,
+  "step_count": 0,
+  "diagnostics": [],
+  "trace_path": "trace.json"
+}

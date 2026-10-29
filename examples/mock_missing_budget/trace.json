@@ -1,0 +1,21 @@
+{
+  "task_id": "missing-budget-001",
+  "run_id": "run-0f7a09d4ecf040a088d5474977755c27",
+  "model": {
+    "mode": "mock",
+    "name": "deterministic-mock-v1"
+  },
+  "model_exchanges": [],
+  "source_model": null,
+  "duplicate": false,
+  "steps": [],
+  "final_status": "unfinished",
+  "reason": {
+    "code": "missing_budget",
+    "message": "缺少预算 budget",
+    "details": {}
+  },
+  "diagnostics": [],
+  "total_cost": null,
+  "total_hours": null
+}

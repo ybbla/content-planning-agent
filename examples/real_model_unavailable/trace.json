@@ -1,0 +1,22 @@
+{
+  "task_id": "normal-001",
+  "run_id": "run-9a060b91cbf04a11bf0a41a11f241a99",
+  "model": {
+    "mode": "real",
+    "name": "unconfigured",
+    "requested_name": "unconfigured"
+  },
+  "model_exchanges": [],
+  "source_model": null,
+  "duplicate": false,
+  "steps": [],
+  "final_status": "unfinished",
+  "reason": {
+    "code": "model_unavailable",
+    "message": "真实模型配置缺失: OPENAI_API_KEY, OPENAI_BASE_URL, OPENAI_MODEL",
+    "details": {}
+  },
+  "diagnostics": [],
+  "total_cost": null,
+  "total_hours": null
+}

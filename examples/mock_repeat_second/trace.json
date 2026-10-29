@@ -1,0 +1,22 @@
+{
+  "task_id": "repeat-001",
+  "run_id": "run-e8d177d7d8104743a66c43b21e80fee4",
+  "model": {
+    "mode": "mock",
+    "name": "deterministic-mock-v1"
+  },
+  "model_exchanges": [],
+  "source_model": {
+    "mode": "mock",
+    "name": "deterministic-mock-v1"
+  },
+  "duplicate": true,
+  "steps": [],
+  "final_status": "completed",
+  "reason": null,
+  "diagnostics": [
+    "duplicate_short_circuit"
+  ],
+  "total_cost": 12,
+  "total_hours": 8
+}

@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.py[cod]
+.pytest_cache/
+data/runtime/
+examples/runs/
+考核规则与交付规范.md
+题目.md

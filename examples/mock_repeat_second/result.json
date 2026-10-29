@@ -1,0 +1,63 @@
+{
+  "task_id": "repeat-001",
+  "run_id": "run-e8d177d7d8104743a66c43b21e80fee4",
+  "status": "completed",
+  "reason": null,
+  "duplicate": true,
+  "model": {
+    "mode": "mock",
+    "name": "deterministic-mock-v1"
+  },
+  "source_model": {
+    "mode": "mock",
+    "name": "deterministic-mock-v1"
+  },
+  "task_plan": {
+    "goal": "为主题“会员日活动”完成内容活动方案",
+    "constraints": {
+      "budget": 20,
+      "deadline_hours": 8,
+      "quality_preference": "high"
+    },
+    "steps": []
+  },
+  "tool_results": {
+    "candidates": [],
+    "scripts": []
+  },
+  "estimates": [],
+  "saved_plan": {
+    "task_id": "repeat-001",
+    "theme": "会员日活动",
+    "asset": {
+      "asset_id": "asset-high",
+      "name": "高质量合成素材包",
+      "quality": "high",
+      "description": "画面与文案素材更完整，优先满足高质量偏好",
+      "cost": 7,
+      "hours": 5
+    },
+    "script": {
+      "script_id": "script-1",
+      "theme": "会员日活动",
+      "text": "围绕“会员日活动”的三段式活动内容脚本：预热、发布、复盘。",
+      "cost": 4,
+      "hours": 2,
+      "reused": false
+    },
+    "save": {
+      "cost": 1,
+      "hours": 1
+    },
+    "total_cost": 12,
+    "total_hours": 8
+  },
+  "total_cost": 12,
+  "total_hours": 8,
+  "deficit": null,
+  "step_count": 0,
+  "diagnostics": [
+    "duplicate_short_circuit"
+  ],
+  "trace_path": "trace.json"
+}

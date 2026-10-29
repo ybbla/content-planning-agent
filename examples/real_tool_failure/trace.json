@@ -1,0 +1,194 @@
+{
+  "task_id": "tool-failure-001",
+  "run_id": "run-cc9c88aac94f4a118245c180ab869398",
+  "model": {
+    "mode": "real",
+    "name": "doubao-seed-2-1-pro-260915",
+    "requested_name": "doubao-seed-2-1-pro-260915"
+  },
+  "model_exchanges": [
+    {
+      "step": 1,
+      "response_id": "resp_02179319797567945323167f444566161ccbd236f48bec58a835b",
+      "provider_model": "doubao-seed-2-1-pro-260915",
+      "created": 1793197976
+    },
+    {
+      "step": 2,
+      "response_id": "resp_02179319797892845323167f444566161ccbd236f48bec5c2aadf",
+      "provider_model": "doubao-seed-2-1-pro-260915",
+      "created": 1793197979
+    },
+    {
+      "step": 3,
+      "response_id": "resp_02179319798255845323167f444566161ccbd236f48bec5aa88a6",
+      "provider_model": "doubao-seed-2-1-pro-260915",
+      "created": 1793197983
+    },
+    {
+      "step": 4,
+      "response_id": "resp_02179319798766645323167f444566161ccbd236f48bec582496f",
+      "provider_model": "doubao-seed-2-1-pro-260915",
+      "created": 1793197988
+    },
+    {
+      "step": 5,
+      "response_id": "resp_02179319799142245323167f444566161ccbd236f48bec5e56103",
+      "provider_model": "doubao-seed-2-1-pro-260915",
+      "created": 1793197992
+    },
+    {
+      "step": 6,
+      "response_id": "resp_02179319799639645323167f444566161ccbd236f48bec597f4ef",
+      "provider_model": "doubao-seed-2-1-pro-260915",
+      "created": 1793197997
+    }
+  ],
+  "source_model": null,
+  "duplicate": false,
+  "steps": [
+    {
+      "step": 1,
+      "action": "search_assets",
+      "arguments": {
+        "theme": "夏季新品发布"
+      },
+      "rationale": "先检索候选素材，作为后续脚本生成与成本评估的基础。",
+      "succeeded": true,
+      "code": "ASSETS_FOUND",
+      "result_summary": {
+        "candidates": [
+          {
+            "asset_id": "asset-high",
+            "name": "高质量合成素材包",
+            "quality": "high",
+            "description": "画面与文案素材更完整，优先满足高质量偏好",
+            "cost": 7,
+            "hours": 5
+          },
+          {
+            "asset_id": "asset-economy",
+            "name": "经济合成素材包",
+            "quality": "economy",
+            "description": "精简素材组合，用于降低成本和耗时",
+            "cost": 3,
+            "hours": 2
+          }
+        ]
+      },
+      "error": null
+    },
+    {
+      "step": 2,
+      "action": "generate_script",
+      "arguments": {
+        "theme": "夏季新品发布"
+      },
+      "rationale": "素材检索成功，先生成脚本以便后续评估高质量候选。",
+      "succeeded": false,
+      "code": "TEMPORARY_TOOL_FAILURE",
+      "result_summary": {},
+      "error": {
+        "code": "TEMPORARY_TOOL_FAILURE",
+        "message": "注入的临时故障；工具未执行且无副作用"
+      }
+    },
+    {
+      "step": 3,
+      "action": "generate_script",
+      "arguments": {
+        "theme": "夏季新品发布"
+      },
+      "rationale": "脚本生成发生临时故障且无副作用，重试该工具以继续流程。",
+      "succeeded": true,
+      "code": "SCRIPT_GENERATED",
+      "result_summary": {
+        "script_id": "script-1",
+        "theme": "夏季新品发布",
+        "text": "围绕“夏季新品发布”的三段式活动内容脚本：预热、发布、复盘。",
+        "cost": 4,
+        "hours": 2,
+        "reused": false
+      },
+      "error": null
+    },
+    {
+      "step": 4,
+      "action": "estimate_cost",
+      "arguments": {
+        "asset_id": "asset-high",
+        "script_id": "script-1"
+      },
+      "rationale": "高质量偏好下优先评估高质量素材包与已生成脚本的组合。",
+      "succeeded": true,
+      "code": "ESTIMATED",
+      "result_summary": {
+        "estimate_id": "estimate-1",
+        "asset_id": "asset-high",
+        "script_id": "script-1",
+        "total_cost": 12,
+        "total_hours": 8,
+        "feasible": true,
+        "violations": [],
+        "cost_shortfall": 0,
+        "hours_shortfall": 0
+      },
+      "error": null
+    },
+    {
+      "step": 5,
+      "action": "save_plan",
+      "arguments": {
+        "task_id": "tool-failure-001",
+        "asset_id": "asset-high",
+        "script_id": "script-1",
+        "estimate_id": "estimate-1"
+      },
+      "rationale": "高质量候选方案估算可行，费用12、耗时8均满足约束，保存该计划。",
+      "succeeded": true,
+      "code": "PLAN_SAVED",
+      "result_summary": {
+        "task_id": "tool-failure-001",
+        "theme": "夏季新品发布",
+        "asset": {
+          "asset_id": "asset-high",
+          "name": "高质量合成素材包",
+          "quality": "high",
+          "description": "画面与文案素材更完整，优先满足高质量偏好",
+          "cost": 7,
+          "hours": 5
+        },
+        "script": {
+          "script_id": "script-1",
+          "theme": "夏季新品发布",
+          "text": "围绕“夏季新品发布”的三段式活动内容脚本：预热、发布、复盘。",
+          "cost": 4,
+          "hours": 2,
+          "reused": false
+        },
+        "save": {
+          "cost": 1,
+          "hours": 1
+        },
+        "total_cost": 12,
+        "total_hours": 8
+      },
+      "error": null
+    },
+    {
+      "step": 6,
+      "action": "finish",
+      "arguments": {},
+      "rationale": "方案已成功保存，满足预算与时间要求，可以结束任务。",
+      "succeeded": true,
+      "code": "FINISHED",
+      "result_summary": {},
+      "error": null
+    }
+  ],
+  "final_status": "completed",
+  "reason": null,
+  "diagnostics": [],
+  "total_cost": 12,
+  "total_hours": 8
+}

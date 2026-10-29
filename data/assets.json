@@ -1,0 +1,18 @@
+[
+  {
+    "asset_id": "asset-high",
+    "name": "高质量合成素材包",
+    "quality": "high",
+    "description": "画面与文案素材更完整，优先满足高质量偏好",
+    "cost": 7,
+    "hours": 5
+  },
+  {
+    "asset_id": "asset-economy",
+    "name": "经济合成素材包",
+    "quality": "economy",
+    "description": "精简素材组合，用于降低成本和耗时",
+    "cost": 3,
+    "hours": 2
+  }
+]

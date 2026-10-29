@@ -1,0 +1,243 @@
+{
+  "task_id": "no-feasible-budget-001",
+  "run_id": "run-2be7200dc7cf42979d2b0b8d1633166a",
+  "status": "unfinished",
+  "reason": {
+    "code": "no_feasible_plan",
+    "message": "所有候选均不满足约束",
+    "details": {
+      "budget": 6,
+      "deadline_hours": 8,
+      "deficit_basis": {
+        "asset_id": "asset-economy",
+        "total_cost": 8,
+        "total_hours": 5,
+        "deficit": {
+          "cost": 2,
+          "hours": 0
+        }
+      },
+      "deficit": {
+        "cost": 2,
+        "hours": 0
+      },
+      "candidate_shortfalls": [
+        {
+          "asset_id": "asset-high",
+          "total_cost": 12,
+          "total_hours": 8,
+          "deficit": {
+            "cost": 6,
+            "hours": 0
+          }
+        },
+        {
+          "asset_id": "asset-economy",
+          "total_cost": 8,
+          "total_hours": 5,
+          "deficit": {
+            "cost": 2,
+            "hours": 0
+          }
+        }
+      ]
+    }
+  },
+  "duplicate": false,
+  "model": {
+    "mode": "mock",
+    "name": "deterministic-mock-v1"
+  },
+  "source_model": null,
+  "task_plan": {
+    "goal": "为主题“夏季新品发布”完成内容活动方案",
+    "constraints": {
+      "budget": 6,
+      "deadline_hours": 8,
+      "quality_preference": "high"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "action": "search_assets",
+        "arguments": {
+          "theme": "夏季新品发布"
+        },
+        "rationale": "先获取候选素材",
+        "succeeded": true,
+        "code": "ASSETS_FOUND",
+        "result_summary": {
+          "candidates": [
+            {
+              "asset_id": "asset-high",
+              "name": "高质量合成素材包",
+              "quality": "high",
+              "description": "画面与文案素材更完整，优先满足高质量偏好",
+              "cost": 7,
+              "hours": 5
+            },
+            {
+              "asset_id": "asset-economy",
+              "name": "经济合成素材包",
+              "quality": "economy",
+              "description": "精简素材组合，用于降低成本和耗时",
+              "cost": 3,
+              "hours": 2
+            }
+          ]
+        },
+        "error": null
+      },
+      {
+        "step": 2,
+        "action": "generate_script",
+        "arguments": {
+          "theme": "夏季新品发布"
+        },
+        "rationale": "生成可跨素材复用的脚本",
+        "succeeded": true,
+        "code": "SCRIPT_GENERATED",
+        "result_summary": {
+          "script_id": "script-1",
+          "theme": "夏季新品发布",
+          "text": "围绕“夏季新品发布”的三段式活动内容脚本：预热、发布、复盘。",
+          "cost": 4,
+          "hours": 2,
+          "reused": false
+        },
+        "error": null
+      },
+      {
+        "step": 3,
+        "action": "estimate_cost",
+        "arguments": {
+          "asset_id": "asset-high",
+          "script_id": "script-1"
+        },
+        "rationale": "先估算偏好候选",
+        "succeeded": true,
+        "code": "ESTIMATED",
+        "result_summary": {
+          "estimate_id": "estimate-1",
+          "asset_id": "asset-high",
+          "script_id": "script-1",
+          "total_cost": 12,
+          "total_hours": 8,
+          "feasible": false,
+          "violations": [
+            "budget_exceeded"
+          ],
+          "cost_shortfall": 6,
+          "hours_shortfall": 0
+        },
+        "error": null
+      },
+      {
+        "step": 4,
+        "action": "estimate_cost",
+        "arguments": {
+          "asset_id": "asset-economy",
+          "script_id": "script-1"
+        },
+        "rationale": "当前方案不可行，复用脚本并估算替代候选",
+        "succeeded": true,
+        "code": "ESTIMATED",
+        "result_summary": {
+          "estimate_id": "estimate-2",
+          "asset_id": "asset-economy",
+          "script_id": "script-1",
+          "total_cost": 8,
+          "total_hours": 5,
+          "feasible": false,
+          "violations": [
+            "budget_exceeded"
+          ],
+          "cost_shortfall": 2,
+          "hours_shortfall": 0
+        },
+        "error": null
+      },
+      {
+        "step": 5,
+        "action": "abort",
+        "arguments": {
+          "reason": "no_feasible_plan",
+          "message": "所有候选均不满足约束"
+        },
+        "rationale": "全部候选已估算且均不可行",
+        "succeeded": true,
+        "code": "ABORTED",
+        "result_summary": {},
+        "error": null
+      }
+    ]
+  },
+  "tool_results": {
+    "candidates": [
+      {
+        "asset_id": "asset-high",
+        "name": "高质量合成素材包",
+        "quality": "high",
+        "description": "画面与文案素材更完整，优先满足高质量偏好",
+        "cost": 7,
+        "hours": 5
+      },
+      {
+        "asset_id": "asset-economy",
+        "name": "经济合成素材包",
+        "quality": "economy",
+        "description": "精简素材组合，用于降低成本和耗时",
+        "cost": 3,
+        "hours": 2
+      }
+    ],
+    "scripts": [
+      {
+        "script_id": "script-1",
+        "theme": "夏季新品发布",
+        "text": "围绕“夏季新品发布”的三段式活动内容脚本：预热、发布、复盘。",
+        "cost": 4,
+        "hours": 2,
+        "reused": false
+      }
+    ]
+  },
+  "estimates": [
+    {
+      "estimate_id": "estimate-1",
+      "asset_id": "asset-high",
+      "script_id": "script-1",
+      "total_cost": 12,
+      "total_hours": 8,
+      "feasible": false,
+      "violations": [
+        "budget_exceeded"
+      ],
+      "cost_shortfall": 6,
+      "hours_shortfall": 0
+    },
+    {
+      "estimate_id": "estimate-2",
+      "asset_id": "asset-economy",
+      "script_id": "script-1",
+      "total_cost": 8,
+      "total_hours": 5,
+      "feasible": false,
+      "violations": [
+        "budget_exceeded"
+      ],
+      "cost_shortfall": 2,
+      "hours_shortfall": 0
+    }
+  ],
+  "saved_plan": null,
+  "total_cost": null,
+  "total_hours": null,
+  "deficit": {
+    "cost": 2,
+    "hours": 0
+  },
+  "step_count": 5,
+  "diagnostics": [],
+  "trace_path": "trace.json"
+}

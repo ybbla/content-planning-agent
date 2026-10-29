@@ -1,0 +1,72 @@
+{
+  "task_id": "normal-001",
+  "run_id": "run-0613091aeb634b18a53ddf4a03f03ee8",
+  "model": {
+    "mode": "mock",
+    "name": "deterministic-mock-v1"
+  },
+  "model_exchanges": [],
+  "source_model": null,
+  "duplicate": false,
+  "steps": [
+    {
+      "step": 1,
+      "action": "search_assets",
+      "arguments": {
+        "theme": "夏季新品发布"
+      },
+      "rationale": "先获取候选素材",
+      "succeeded": true,
+      "code": "ASSETS_FOUND",
+      "result_summary": {
+        "candidates": [
+          {
+            "asset_id": "asset-high",
+            "name": "高质量合成素材包",
+            "quality": "high",
+            "description": "画面与文案素材更完整，优先满足高质量偏好",
+            "cost": 7,
+            "hours": 5
+          },
+          {
+            "asset_id": "asset-economy",
+            "name": "经济合成素材包",
+            "quality": "economy",
+            "description": "精简素材组合，用于降低成本和耗时",
+            "cost": 3,
+            "hours": 2
+          }
+        ]
+      },
+      "error": null
+    },
+    {
+      "step": 2,
+      "action": "generate_script",
+      "arguments": {
+        "theme": "夏季新品发布"
+      },
+      "rationale": "生成可跨素材复用的脚本",
+      "succeeded": true,
+      "code": "SCRIPT_GENERATED",
+      "result_summary": {
+        "script_id": "script-1",
+        "theme": "夏季新品发布",
+        "text": "围绕“夏季新品发布”的三段式活动内容脚本：预热、发布、复盘。",
+        "cost": 4,
+        "hours": 2,
+        "reused": false
+      },
+      "error": null
+    }
+  ],
+  "final_status": "unfinished",
+  "reason": {
+    "code": "max_steps",
+    "message": "已达到模型动作步数上限",
+    "details": {}
+  },
+  "diagnostics": [],
+  "total_cost": null,
+  "total_hours": null
+}
